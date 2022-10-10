@@ -1,14 +1,13 @@
 package model;
 
 
-import java.time.LocalTime;
 
 public class Recorrido {
 	
 	private int idRecorrido;
 	private int idTipoColectivo;
-	private LocalTime hsSalida;
-	private LocalTime hsLlegada;
+	private String hsSalida;
+	private String hsLlegada;
 	private int idLocOrigen;
 	private int idLocDestino;
 	
@@ -36,16 +35,16 @@ public class Recorrido {
 	public void setIdTipoColectivo(int idTipoColectivo) {
 		this.idTipoColectivo = idTipoColectivo;
 	}
-	public LocalTime getHsSalida() {
+	public String getHsSalida() {
 		return hsSalida;
 	}
-	public void setHsSalida(LocalTime hsSalida) {
+	public void setHsSalida(String hsSalida) {
 		this.hsSalida = hsSalida;
 	}
-	public LocalTime getHsLlegada() {
+	public String getHsLlegada() {
 		return hsLlegada;
 	}
-	public void setHsLlegada(LocalTime hsLlegada) {
+	public void setHsLlegada(String hsLlegada) {
 		this.hsLlegada = hsLlegada;
 	}
 

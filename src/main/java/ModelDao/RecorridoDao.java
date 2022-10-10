@@ -27,6 +27,8 @@ public class RecorridoDao {
 					rec.setIdLocOrigen(rs.getInt("id_localidadO"));
 					rec.setIdLocDestino(rs.getInt("id_localidadD"));
 					rec.setIdRecorrido(rs.getInt("idrecorrido"));
+					rec.setHsSalida(rs.getNString("hsSalida"));
+					rec.setHsLlegada(rs.getString("hsLlegada"));
 					recorridos.add(rec);
 				}
 			}

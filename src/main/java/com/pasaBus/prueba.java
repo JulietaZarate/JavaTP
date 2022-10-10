@@ -50,45 +50,52 @@ public class prueba extends HttpServlet {
 			
 			LocalidadesDao locDao = new LocalidadesDao();
 			LinkedList<Localidad> tabL = locDao.buscar();
-			
-			ArrayList<Recorrido> varRec = new ArrayList<Recorrido>();
+						
+			boolean band= false;
 			
 		for (int i = 0; i < tabR.size(); i++) {
 				
-				if(idReco==tabR.get(i).getIdLocOrigen()) {
+			
+			
+					if(idReco==tabR.get(i).getIdLocOrigen() && idRecol==tabR.get(i).getIdLocDestino()) {
 					
 					salida.println("<html><body>");
 					salida.println("Origen:");
-					for (int j = 0; j < tabL.size(); j++) {
-							
-						if(idReco==tabL.get(j).getId()) {
-					salida.println(""+tabL.get(j).getLocalidad()+"\n");}
-					}
-					salida.println("</body></html>");
 					
-					if(idRecol==tabR.get(i).getIdLocDestino()) {
+					for (int j = 0; j < tabL.size(); j++){
 						
-						salida.println("<html><body>");
-						salida.println("Destino: ");
-						for (int j = 0; j < tabL.size(); j++) {
+							if(idReco==tabL.get(j).getId()) {
+							salida.println(""+tabL.get(j).getLocalidad()+"\n");
+							break;
+							}
+					}
+					
+					salida.println("Hora Salida:"+tabR.get(i).getHsSalida());
+					salida.println("Destino:");
+					
+					for (int k = 0; k < tabL.size(); k++) {
 								
-							if(idRecol==tabL.get(j).getId()) {
-						salida.println(""+tabL.get(j).getLocalidad());}
-						}
-						salida.println("</body></html>");
+							if(idRecol==tabL.get(k).getId()) {
+							salida.println(""+tabL.get(k).getLocalidad());
+							break;
+							}
+					}
+					salida.println("Hora Llegada: "+tabR.get(i).getHsLlegada());
+
+					salida.println("<br>");
+
+					salida.println("</body></html>");
+					band=true;}
+					}					
+					
+				if(band==false) salida.println("No existen recorridos con los datos ingresados");
+										
 				}
 				
-				}
-			}
 	
-	}
+		
 			
-			
-			/*salida.println("<html><body>");
-			salida.println("<h1>hola</h1>");
-			salida.println("<h1>hola</h1>");
-			salida.println("</body></html>");/*
-	}
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
