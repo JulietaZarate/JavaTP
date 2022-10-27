@@ -1,0 +1,15 @@
+<context>
+		
+		<resource name="jdbc/ProjectVpp" auth="Container"  type="javax.sql.DataSources"
+		
+				maxActive="15"   maxIdle="3"   maxWait="5000" 
+				
+				username="root"  password="root"
+				
+				driverClassName="com.mysql.cj.jdbc.Driver"
+				
+				url="jdbc::mysql://localhost:8806/ProjectVpp">
+				
+				</resource>
+
+</context>
